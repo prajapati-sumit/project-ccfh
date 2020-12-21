@@ -1,0 +1,76 @@
+doctype html
+html(lang='en')
+    head
+        title WBJEE COUNSELLING
+        link(rel='stylesheet' type='text/css' href='./css/styles.css')
+        script(src='/js/script.js')
+    body
+        .container
+            #header.bar WBJEE COUNSELLING CHOICE FILLING HELPER
+            #inputarea.item
+                form#myForm(action='/' method='POST')
+                    label(for='rank') Enter Your Rank:
+                    input#rank(type='number' name='rank')
+                    label(for='category') Select Category:
+                    select#category(name='category')
+                        option(value='OP') OP
+                        option(value='OPPH') OPPH
+                        option(value='SC') SC
+                        option(value='SCPH') SCPH
+                        option(value='ST') ST
+                        option(value='STPH') STPH
+                        option(value='OBC-A') OBC-A
+                        option(value='OBC-A(pwd)') OBC-A(pwd)
+                        option(value='OBC-B') OBC-B
+                        option(value='OBC-B(pwd)') OBC-B(pwd)
+                    label(for='branch') Select Your Branch:
+                    select#branch(name='branch')
+                        option(value='Agricultural Engineering') Agricultural Engineering 
+                        option(value='Applied Electronics & Instrumentation Engineering/ Electronics & Instrumentation Engineering')
+                            | Applied Electronics & Instrumentation Engineering/ Electronics & Instrumentation Engineering
+                        option(value='Biotechnology') Biotechnology
+                        option(value='Chemical Engineering') Chemical Engineering
+                        option(value='Civil Engineering') Civil Engineering
+                        option(value='Computer Science & Engineering/ Computer Science & Technology')
+                            | Computer Science &
+                            | Engineering/ Computer Science & Technology
+                        option(value='Electrical Engineering') Electrical Engineering
+                        option(value='Electronics & Communication Engineering/Electronics & Telecommunication Engineering')
+                            | Electronics & Communication Engineering/Electronics & Telecommunication Engineering
+                        option(value='Information Technology') Information Technology
+                        option(value='Mechanical Engineering') Mechanical Engineering
+                    button#btn Submit
+                ul
+                    li.pos POSSIBLE
+                    li.unpos UNLIKELY
+            #outputarea.item
+                h1
+                    center #{message}
+               
+                table#maintable
+                    tr
+                        th Institue Name
+                        th Branch Name
+                        th Opening Rank
+                        th Closing Rank
+                    if content
+                        each row in content
+                            if row
+                                if row[category]['close']>base
+                                    tr.green
+                                        td #{row['Institute Name']}
+                                        td #{row['Branch name']}
+                                        td #{row[category]['open']}
+                                        td #{row[category]['close']}
+                                else
+                                    tr.red
+                                        td #{row['Institute Name']}
+                                        td #{row['Branch name']}
+                                        td #{row[category]['open']}
+                                        td #{row[category]['close']}
+
+                
+                    
+
+
+        #footer Copyright © Sumit Prajapati
