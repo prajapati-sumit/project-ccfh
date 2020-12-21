@@ -1,0 +1,29 @@
+{
+  "name": "project_ccfh",
+  "version": "1.0.0",
+  "description": "First Project",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.17.1",
+    "mongodb": "^3.6.3",
+    "mongoose": "^5.10.16",
+    "nodemon": "^2.0.6",
+    "pug": "^3.0.0",
+    "serve-static": "^1.14.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/prajapati-sumit/project-ccfh.git"
+  },
+  "author": "Sumit Prajapati",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/prajapati-sumit/project-ccfh/issues"
+  },
+  "homepage": "https://github.com/prajapati-sumit/project-ccfh#readme"
+}

@@ -14,7 +14,7 @@ const pug = require('pug');
 //GLOBAL VARIABLES
 const app = express();
 const dbpath = "mongodb://localhost:27017/";    //MONGODB URL
-const port = 3000;  //PORT
+const port = process.env.PORT || 3000;  //PORT
 
 
 //EXPRESS SPECIFIC CONFIGURATION
